@@ -36,7 +36,7 @@ while true; do
 	
 	NEW_BIN=$(echo $(diff ${LAST_LIST} ${CUR_LIST} | grep '^>.*\.bin$') | sed -e 's/> *//')
 
-	[  -z ${NEW_BIN} ] || echo mv ${DL_PATH}/${NEW_BIN}  ${CARD_PATH}
+	[  -z ${NEW_BIN} ] || mv ${DL_PATH}/${NEW_BIN}  ${CARD_PATH}
 
 	ls ${DL_PATH} > ${LAST_LIST}
 
