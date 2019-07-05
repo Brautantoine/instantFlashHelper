@@ -51,7 +51,7 @@ Example : instantflashhelper -c --source ~/Desktop/some_directory /media/user/ca
 # Display version
 display_version ()
 {
-	echo "instantflashhelper -- v1.0 (alpha release)"
+	echo "instantflashhelper -- v1.1 (alpha release)"
 }
 # Remove temp folder and say goodbye
 do_cleanup_and_quit ()
@@ -117,7 +117,7 @@ while true; do
 	NEW_BIN=$(echo $(diff ${LAST_LIST} ${CUR_LIST} | grep '^>.*\.bin$') | sed -e 's/> *//')
 
 	if [ ! -z ${NEW_BIN} ];then
-		 echo ${COMMAND_STRING} ${NEW_BIN} to ${CARD_PATH}.
+		 echo $(date +"[%H:%M]") ${COMMAND_STRING} ${NEW_BIN} to ${CARD_PATH}.
 		 ${COMMAND} ${DL_PATH}/${NEW_BIN}  ${CARD_PATH}
 	fi
 
